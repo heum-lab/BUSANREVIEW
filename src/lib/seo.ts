@@ -1,5 +1,7 @@
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.g2gbusan.com';
+// 대시보드/CLI로 넣은 환경변수에 BOM·공백이 섞이면 new URL()이 빌드를 깨뜨리므로 정리한다.
+const ENV_SITE_URL = process.env.NEXT_PUBLIC_SITE_URL?.replace(/[\uFEFF\s]/g, '').replace(/\/+$/, '');
+
+export const SITE_URL = ENV_SITE_URL || 'https://www.g2gbusan.com';
 
 export const SITE_NAME = 'GOOD TO GREAT';
 export const SITE_ALT_NAME = '굿투그레이트';
