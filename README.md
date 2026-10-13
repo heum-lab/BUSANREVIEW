@@ -3,7 +3,7 @@
 쿠팡·네이버 스마트스토어 등 주요 커머스 플랫폼의 **리뷰체험단·가구매·구매평·상위노출 마케팅**을 소개하고 상담을 접수하는 서비스입니다. 마케팅 랜딩 페이지 + 상담 접수 + 블로그("리뷰이야기") + 관리자 백오피스로 구성된 단일 Next.js 애플리케이션입니다.
 
 - 운영사: 굿투그레이트 부산지사
-- 서비스 URL: https://g2greview.com
+- 서비스 URL: https://www.g2gbusan.com
 - 문의: g2g2024@naver.com / 카카오톡 채널 상담
 
 > 패키지명은 레거시로 `stylec-landing`이지만 서비스 브랜드는 GOOD TO GREAT입니다.
@@ -57,7 +57,7 @@ npm run lint
 |------|------|
 | `AUTH_SECRET` | JWT 서명 시크릿 (32자 이상 권장, 필수) |
 | `NEXT_PUBLIC_KAKAO_CHANNEL_ID` | 카카오톡 채널 ID(밑줄 포함, 기본 `_xfycJs`) |
-| `NEXT_PUBLIC_SITE_URL` | 사이트 URL (기본 `https://g2greview.com`) |
+| `NEXT_PUBLIC_SITE_URL` | 사이트 URL (기본 `https://www.g2gbusan.com`) |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | 구글 사이트 인증 코드 |
 | `NEXT_PUBLIC_NAVER_SITE_VERIFICATION` | 네이버 사이트 인증 코드 |
 | `BLOB_READ_WRITE_TOKEN` | Vercel Blob 토큰 (배포 환경 자동 주입) |

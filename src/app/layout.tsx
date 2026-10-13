@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   publisher: SITE_NAME,
   category: 'Marketing',
   alternates: {
-    canonical: '/',
     types: {
       'application/rss+xml': [{ url: '/rss.xml', title: `${SITE_NAME} 블로그 RSS` }],
     },
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: `${SITE_TAGLINE} | ${SITE_ALT_NAME}`,
     description: SITE_DESCRIPTION,
     images: ['/brand/logo-dark.png'],
@@ -86,11 +85,13 @@ interface RootLayoutProps {
 
 const ORGANIZATION_JSONLD = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: SITE_NAME,
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#organization`,
+  name: `${SITE_NAME} 부산지사`,
   alternateName: SITE_ALT_NAME,
   url: SITE_URL,
   logo: `${SITE_URL}/brand/logo-dark.png`,
+  image: `${SITE_URL}/brand/logo-dark.png`,
   description: SITE_DESCRIPTION,
   email: 'g2g2024@naver.com',
   address: {
@@ -101,15 +102,22 @@ const ORGANIZATION_JSONLD = {
     addressCountry: 'KR',
   },
   taxID: '762-43-00973',
+  areaServed: [
+    { '@type': 'City', name: '부산광역시' },
+    { '@type': 'Country', name: '대한민국' },
+  ],
+  openingHours: 'Mo-Fr 10:00-18:00',
 };
 
 const WEBSITE_JSONLD = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
   name: SITE_NAME,
   alternateName: SITE_ALT_NAME,
   url: SITE_URL,
   inLanguage: 'ko-KR',
+  publisher: { '@id': `${SITE_URL}/#organization` },
   description: SITE_DESCRIPTION,
 };
 

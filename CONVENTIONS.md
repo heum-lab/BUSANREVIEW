@@ -180,7 +180,7 @@ AUTH_SECRET=replace_with_a_random_32+_character_string
 NEXT_PUBLIC_KAKAO_CHANNEL_ID=        # 카카오 채널 ID(밑줄 포함, 예: _abcdef)
 
 # 코드에서 참조하는 추가 변수 (선택)
-NEXT_PUBLIC_SITE_URL=                 # 기본 https://g2greview.com
+NEXT_PUBLIC_SITE_URL=                 # 기본 https://www.g2gbusan.com
 NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION= # 구글 사이트 인증
 NEXT_PUBLIC_NAVER_SITE_VERIFICATION=  # 네이버 사이트 인증
 BLOB_READ_WRITE_TOKEN=                # Vercel Blob (배포 환경 자동 주입)

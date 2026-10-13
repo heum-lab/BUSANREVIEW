@@ -10,7 +10,7 @@ GOOD TO GREAT(굿투그레이트)는 쿠팡·네이버 스마트스토어 등 �
 - 사업자등록번호: 762-43-00973 / 통신판매업: 2024-서울용산-1282
 - 주소: 부산광역시 해운대구 센텀동로 71, 10층 1009호(우동, 벽산이센텀클래스원2차)
 - 문의: g2g2024@naver.com / 카카오톡 채널 상담
-- 서비스 URL: https://g2greview.com (환경변수 `NEXT_PUBLIC_SITE_URL`로 오버라이드)
+- 서비스 URL: https://www.g2gbusan.com (환경변수 `NEXT_PUBLIC_SITE_URL`로 오버라이드)
 - 패키지명: `stylec-landing` (레거시 명칭, 서비스 브랜드는 GOOD TO GREAT)
 
 ---

@@ -6,6 +6,7 @@ import { Footer } from '@/components/common/Footer';
 import { Button } from '@/components/common/Button';
 import { getCurrentUser } from '@/lib/auth';
 import { getPostById, formatDate, extractPlainText } from '@/lib/posts';
+import { SITE_URL } from '@/lib/seo';
 
 interface PostDetailPageProps {
   params: { id: string };
@@ -41,8 +42,25 @@ export default async function PostDetailPage({ params }: PostDetailPageProps): P
   const user = await getCurrentUser();
   const canEdit = Boolean(user);
 
+  const postJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: extractPlainText(post.content, 150),
+    datePublished: post.createdAt,
+    author: { '@type': 'Person', name: post.author },
+    publisher: { '@id': `${SITE_URL}/#organization` },
+    mainEntityOfPage: `${SITE_URL}/blog/${post.id}`,
+    keywords: post.tags.join(', '),
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(postJsonLd).replace(/</g, '\\u003c') }}
+      />
       <Header />
       <main className="bg-white">
         <div className="container-x py-16 sm:py-20">
