@@ -1,0 +1,18 @@
+node_modules
+.next
+out
+dist
+.env
+.env.local
+.env.production
+.DS_Store
+*.log
+.vercel
+next-env.d.ts
+
+.vercel
+.env*
+
+# 민감 런타임 데이터 (비밀번호 해시 / 상담 신청자 개인정보)
+data/users.json
+data/consultations.json

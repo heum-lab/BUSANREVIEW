@@ -1,0 +1,144 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-brand-50 text-ink-900 font-sans antialiased;
+    font-feature-settings: 'ss06' on;
+  }
+  h1, h2, h3, h4 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto max-w-container px-5 sm:px-6 lg:px-8;
+  }
+  .section {
+    @apply py-20 sm:py-24 lg:py-28;
+  }
+  .eyebrow {
+    @apply inline-block rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold tracking-wide text-brand-600 uppercase;
+  }
+
+  .legal-prose > * + * {
+    @apply mt-4;
+  }
+  .legal-prose h2 {
+    @apply mt-10 text-xl font-bold text-ink-900;
+  }
+  .legal-prose h2:first-child {
+    @apply mt-0;
+  }
+  .legal-prose p {
+    @apply text-sm leading-relaxed text-ink-700;
+  }
+  .legal-prose ol {
+    @apply list-decimal space-y-2 pl-5 text-sm text-ink-700;
+  }
+  .legal-prose ul {
+    @apply list-disc space-y-2 pl-5 text-sm text-ink-700;
+  }
+  .legal-prose li {
+    @apply leading-relaxed;
+  }
+  .legal-prose strong {
+    @apply font-semibold text-ink-900;
+  }
+
+  .tiptap-editor h2 {
+    @apply mt-5 text-xl font-bold text-ink-900;
+  }
+  .tiptap-editor h3 {
+    @apply mt-4 text-lg font-bold text-ink-900;
+  }
+  .tiptap-editor p {
+    @apply mt-3 text-ink-900;
+  }
+  .tiptap-editor ul {
+    @apply mt-3 list-disc space-y-1 pl-6;
+  }
+  .tiptap-editor ol {
+    @apply mt-3 list-decimal space-y-1 pl-6;
+  }
+  .tiptap-editor blockquote {
+    @apply mt-4 border-l-4 border-ink-100 pl-4 text-ink-500 italic;
+  }
+  .tiptap-editor p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    color: #A6ABB7;
+    pointer-events: none;
+    float: left;
+    height: 0;
+  }
+  .tiptap-editor table {
+    @apply mt-4 w-full table-fixed border-collapse text-sm;
+  }
+  .tiptap-editor th,
+  .tiptap-editor td {
+    @apply border border-ink-100 px-3 py-2 text-left align-top;
+  }
+  .tiptap-editor th {
+    @apply bg-ink-50 font-semibold text-ink-900;
+  }
+  .tiptap-editor .selectedCell {
+    @apply bg-brand-50;
+  }
+  .tiptap-editor .column-resize-handle {
+    @apply bg-brand-500;
+    position: absolute;
+    right: -2px;
+    top: 0;
+    bottom: -2px;
+    width: 4px;
+    pointer-events: none;
+  }
+  .tiptap-editor .tableWrapper {
+    overflow-x: auto;
+  }
+
+  .post-prose h2 {
+    @apply mt-8 text-2xl font-bold text-ink-900;
+  }
+  .post-prose h3 {
+    @apply mt-6 text-xl font-bold text-ink-900;
+  }
+  .post-prose p {
+    @apply mt-4 leading-relaxed text-ink-900;
+  }
+  .post-prose ul {
+    @apply mt-4 list-disc space-y-1 pl-6;
+  }
+  .post-prose ol {
+    @apply mt-4 list-decimal space-y-1 pl-6;
+  }
+  .post-prose blockquote {
+    @apply mt-6 border-l-4 border-ink-100 pl-4 text-ink-500 italic;
+  }
+  .post-prose a {
+    @apply text-brand-600 underline underline-offset-2 hover:text-ink-900;
+  }
+  .post-prose img {
+    @apply my-6 rounded-xl max-w-full h-auto;
+  }
+  .post-prose strong {
+    @apply font-semibold text-ink-900;
+  }
+  .post-prose table {
+    @apply my-6 w-full table-fixed border-collapse text-sm;
+  }
+  .post-prose th,
+  .post-prose td {
+    @apply border border-ink-100 px-3 py-2 text-left align-top leading-relaxed;
+  }
+  .post-prose th {
+    @apply bg-ink-50 font-semibold text-ink-900;
+  }
+}
