@@ -56,6 +56,7 @@ npm run lint
 | 변수 | 설명 |
 |------|------|
 | `AUTH_SECRET` | JWT 서명 시크릿 (32자 이상 권장, 필수) |
+| `AUTH_USERS_JSON` | 관리자 계정 목록(`data/users.json` 내용 그대로). 배포 환경은 파일이 없으므로 필수 |
 | `NEXT_PUBLIC_KAKAO_CHANNEL_ID` | 카카오톡 채널 ID(밑줄 포함, 기본 `_xfycJs`) |
 | `NEXT_PUBLIC_SITE_URL` | 사이트 URL (기본 `https://www.g2gbusan.com`) |
 | `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` | 구글 사이트 인증 코드 |

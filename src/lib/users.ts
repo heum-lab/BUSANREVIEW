@@ -20,22 +20,34 @@ export interface PublicUser {
   name: string;
 }
 
-async function ensureStore(): Promise<void> {
+// 프로덕션(Vercel)은 파일시스템이 읽기 전용이고 data/users.json은 git에서 제외되어 배포에 포함되지 않는다.
+// 그래서 AUTH_USERS_JSON 환경변수(= users.json 내용 그대로)를 우선 사용하고, 없으면 로컬 파일을 읽는다.
+function readFromEnv(): StoredUser[] | null {
+  const raw = process.env.AUTH_USERS_JSON?.replace(/^\uFEFF/, '').trim();
+  if (!raw) return null;
   try {
-    await fs.access(USERS_FILE);
-  } catch {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-    await fs.writeFile(USERS_FILE, '[]', 'utf-8');
+    const parsed = JSON.parse(raw) as StoredUser[];
+    return Array.isArray(parsed) ? parsed : null;
+  } catch (err) {
+    console.error('[users] AUTH_USERS_JSON 파싱 실패', err);
+    return null;
   }
 }
 
 async function readAll(): Promise<StoredUser[]> {
-  await ensureStore();
-  const raw = await fs.readFile(USERS_FILE, 'utf-8');
-  return JSON.parse(raw) as StoredUser[];
+  const fromEnv = readFromEnv();
+  if (fromEnv) return fromEnv;
+  try {
+    const raw = await fs.readFile(USERS_FILE, 'utf-8');
+    return JSON.parse(raw) as StoredUser[];
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') return [];
+    throw err;
+  }
 }
 
 async function writeAll(users: StoredUser[]): Promise<void> {
+  await fs.mkdir(DATA_DIR, { recursive: true });
   await fs.writeFile(USERS_FILE, JSON.stringify(users, null, 2), 'utf-8');
 }
 
