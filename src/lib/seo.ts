@@ -40,6 +40,6 @@ export const PRIMARY_KEYWORDS = [
 ] as const;
 
 export const SITE_DESCRIPTION =
-  '부산 쿠팡 네이버 스마트스토어 리뷰 체험단 구매 가구매 상위노출 마케팅. 굿투그레이트 부산지사 전문 매니저가 캠페인을 운영해 빠른 리뷰를 제공합니다.';
+  '쿠팡 네이버 스마트스토어 리뷰 체험단 구매 가구매 상위노출 마케팅. 굿투그레이트 부산지사 전문 매니저가 캠페인을 운영해 빠른 리뷰를 제공';
 
 export const SITE_TAGLINE = '부산 쿠팡 네이버 스마트스토어 리뷰 구매 가구매 체험단 마케팅';
